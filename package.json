@@ -1,8 +1,8 @@
 {
   "name": "stndrd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./src/stndrd.js",
   "scripts": {
     "test": "mocha tests/index.js"
   },
