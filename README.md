@@ -85,3 +85,8 @@ stndrd.getDefaults();
   }
 };
 ```
+
+
+#### License
+
+MIT
