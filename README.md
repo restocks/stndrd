@@ -7,7 +7,7 @@ Stndrd is an extendable JS lib that helps you standardize currency, clothing siz
 ```npm i```
 
 
-```var stndrd = require('./dist/index');```
+```var stndrd = require('stndrd');```
 
 ## Methods
 #### stndrd.countries('countries', '[filter]')
