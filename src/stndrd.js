@@ -23,8 +23,15 @@ exports.settings = {
     'os': 'OS',
     'n/a': 'OS',
     'one size': 'OS'
-  }
+  },
+  logging: 'none' // to log, set this to debug
 };
+
+if (exports.settings.logging === "debug") {
+  var log = console.log;
+} else {
+  var log = function () {};
+}
 
 // splits string into Array based on slashes and commas also trims whitespace.
 var convertString = function(inputString) {
@@ -38,7 +45,7 @@ var getCountryCode = function(country, type) {
     return o.name.toLowerCase() === country.toLowerCase();
   });
   if (!code) {
-    console.log('No ISO code found for input', country);
+    log('No ISO code found for input', country);
     return country;
   }
   return code[type];
@@ -49,7 +56,7 @@ var getCurrencyCode = function(country) {
     return o.name.toLowerCase() === country.toLowerCase();
   });
   if (!code) {
-    console.log('No currency found for input', country);
+    log('No currency found for input', country);
     return;
   }
   return code.currencies[0];
@@ -95,13 +102,13 @@ exports.size = function(size) {
     if (exports.settings.sizeMap[size]) {
       res = exports.settings.sizeMap[size];
     } else {
-      console.log('No size mapping for input', size);
+      log('No size mapping for input', size);
       res = size;
     }
   } else {
     res = size
   }
-  console.log(res)
+  log(res)
   return res;
 };
 
