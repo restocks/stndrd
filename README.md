@@ -57,6 +57,30 @@ stndrd.size('n/a');
 // returns 'OS'
 ```
 
+#### stndrd.shoeSize(size)
+The shoeSize method takes a string value and returns a normalized string.
+method will pass input through if it's not a string.
+```
+stndrd.shoeSize("Women's 8");
+// returns '8W'
+
+stndrd.shoeSize('W8');
+// returns '8W'
+
+stndrd.shoeSize('8W');
+// returns '8W'
+
+stndrd.shoeSize("Men's 8");
+// returns '8'
+
+stndrd.shoeSize('UK 8');
+// returns 'UK 8'
+
+stndrd.shoeSize('8');
+// returns '8'
+
+```
+
 #### stndrd.getDefaults()
 this is a convenience method that returns the apps default settings. These can be changed manually in your app by modifying the stndrd.settings object as you need for your app.
 ```

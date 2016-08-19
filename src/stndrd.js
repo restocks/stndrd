@@ -112,6 +112,39 @@ exports.size = function(size) {
   return res;
 };
 
+exports.shoeSize = function(size) {
+  var size = size.toLowerCase().trim();
+  var sizeNumber = size.match(/\d+(?:\.\d+)?/);
+  if (sizeNumber === null) {
+    return size;
+  } 
+  if (typeof sizeNumber === "object") {
+    // get number from regex
+    var parsedSize = sizeNumber[0];
+
+    // check for a W to the left or the right of the number
+    var sizeLength = parsedSize.length;
+    if (size.charAt(sizeNumber.index + sizeLength) == "w" || size.charAt(sizeNumber.index -1) == "w") {
+      parsedSize += "W";
+    } 
+    // check if size has women in it
+    else if (size.indexOf("women") !== -1) {
+      parsedSize += "W";
+    }
+    else if (size.indexOf("woman") !== -1) {
+      parsedSize += "W";
+    }
+
+    if (size.indexOf("uk") !== -1) {
+      parsedSize = "UK " + parsedSize;
+    }
+
+    return parsedSize;
+  } else {
+    return size;
+  }
+}
+
 exports.getDefaults = function() {
   if (_.size(arguments) === 0) {
     return exports.settings;
