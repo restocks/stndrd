@@ -43,7 +43,7 @@ stndrd.currency('987,654');
 ```
 
 #### stndrd.size(size)
-The size method takes a string value and returns a noralized string.
+The size method takes a string value and returns a normalized string.
 Default sizes handled are 'extra small', 'x small', 'medium', 'large', 'extra large', 'xx large', 'xxx large', 'os', 'n/a', 'one size'.
 method will pass input through if it's not a string.
 ```
